@@ -35,7 +35,7 @@ function getDouyuData()
 
 function getHuyaData()
 {
-    $FollowDataUrl = "http://fw.huya.com/dispatch?do=userHistory&callback=jQuery1720036349078451689554_1471067116540&uid=1596806337&pageSize=100&page=1&token=13d527badca9f7e3e24658ca9ece99202429ecf25a8f0257924e76202e8db111aeb2755acf3466108b29b63d131b310e&_=1471067117076";
+    $FollowDataUrl = "http://fw.huya.com/dispatch?do=userHistoryuid=1596806337&pageSize=100&page=1";
     $FollowListUrl = "http://fw.huya.com/dispatch?do=userSubscribeAid&uid=1596806337&callback=jQuery1720036349078451689554_1471067116543&_=1471067176707";
     $FollowDataJsonStr = str_replace(")","",strstr(getData($FollowDataUrl),"{"));
     return $FollowDataJsonStr;
