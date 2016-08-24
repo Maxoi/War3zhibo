@@ -11,8 +11,14 @@ function getData($url)
     //设置抓取的url
     curl_setopt($curl, CURLOPT_URL, $url);
     //设置获取的信息以文件流的形式返回，而不是直接输出。
+    //设置Header头
+    $header[] = "Accept: application/json";
+    $header[] = "Accept-Encoding: gzip";
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
-   //执行命令
+    curl_setopt($curl, CURLOPT_HTTPHEADER, $header );
+    curl_setopt($curl,CURLOPT_ENCODING , "gzip");
+    curl_setopt($curl, CURLOPT_CUSTOMREQUEST, 'GET');
+    //执行命令
     $data = curl_exec($curl);
     //关闭URL请求
     curl_close($curl);
